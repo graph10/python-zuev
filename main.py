@@ -1,70 +1,5 @@
 import math
 
-def main():
-
-    #Задание 1 и 2
-    print("Задание 1 и 2")
-    number1 = 8
-    number2 = int(input("Введите число для нахождения НОД: "))
-    print(f"Взятое число: {number2}")
-    result = nod(number1, number2)
-    print(f"НОД чисел равен: {result}")
-
-    #Задание 3
-    string_input = str(input("Задание 3 \nВведите строку для замены гласных: "))
-    string = string_input.lower()
-    print("Ответ:", glasnie(string), f"Взятая строка: {string_input}")
-
-    #Задание 4
-    number3 = int(input("Задание 4 \nВведите любое натуральное число: "))
-    gen = generator(number3)
-    blizhaishee = next(gen)
-    print("Ответ:", blizhaishee, f"взятое число: {number3}")
-
-    #Задание 6
-    list_num = [
-        [5, 2.4, 7+4j],
-        [2, 7.2, 2+10j]
-    ]
-    cortez_compl = poisk_complecs(list_num)
-    print("Задание 6 \n", cortez_compl)
-
-    #Задание 7
-    N = 20
-    iterator = fibonachi(N)
-    print("Задание 7")
-    for sum_ in iterator:
-        print(sum_, end=" ")
-
-    #Задание 8
-    n = 10
-    index_itr = find_index_iter(n+1)
-    print("\nЗадание 8")
-    print(f"Индекс элемента с более чем {n} значащими цифрами: {index_itr+1}")
-
-    #Задание 9
-    print("Задание 9")
-    drob_1 = Frac(1, 2)
-    drob_2 = Frac(2, 3)
-    print("Дроби:", drob_1, drob_2)
-    print("Сумма:", drob_1 + drob_2, "\tПроизведение:", drob_1 * drob_2, "\tИнверсия первой дроби:", drob_1.inverse())
-
-    #Задание 11
-    vector_a = [1, 5, 9]
-    vector_b = [2, 5, 8]
-    result = vector(vector_a, vector_b)
-    print("Задание №11\n", result)
-
-    #Задание 10
-    quad1 = Descr([(0, 0), (2, 0), (2, 2), (0, 2)])
-    quad2 = Descr([(0, 0), (4, 0), (4, 4), (0, 4)])
-
-    print("Задание 10")
-    print(quad1 == quad2)
-    print(quad1.is_similar(quad2))
-
-
-
 #Задание 1
 def nod(number1, number2):
     try:
@@ -264,6 +199,66 @@ class Descr:
         sides_other = sorted(other.len_sides())
         ratio = sides_self[0] / sides_other[0]
         return all(math.isclose(sides_self[i] / sides_other[i], ratio, rel_tol=1e-9) for i in range(4))
+        
 
 
-main()
+#Задание 1 и 2
+print("Задание 1 и 2")
+number1 = 8
+number2 = int(input("Введите число для нахождения НОД: "))
+print(f"Взятое число: {number2}")
+result = nod(number1, number2)
+print(f"НОД чисел равен: {result}")
+
+#Задание 3
+string_input = str(input("Задание 3 \nВведите строку для замены гласных: "))
+string = string_input.lower()
+print("Ответ:", glasnie(string), f"Взятая строка: {string_input}")
+
+#Задание 4
+number3 = int(input("Задание 4 \nВведите любое натуральное число: "))
+gen = generator(number3)
+blizhaishee = next(gen)
+print("Ответ:", blizhaishee, f"взятое число: {number3}")
+
+#Задание 6
+list_num = [
+    [5, 2.4, 7+4j],
+    [2, 7.2, 2+10j]
+]
+cortez_compl = poisk_complecs(list_num)
+print("Задание 6 \n", cortez_compl)
+
+#Задание 7
+N = 20
+iterator = fibonachi(N)
+print("Задание 7")
+for sum_ in iterator:
+    print(sum_, end=" ")
+
+#Задание 8
+n = 10
+index_itr = find_index_iter(n+1)
+print("\nЗадание 8")
+print(f"Индекс элемента с более чем {n} значащими цифрами: {index_itr+1}")
+
+#Задание 9
+print("Задание 9")
+drob_1 = Frac(1, 2)
+drob_2 = Frac(2, 3)
+print("Дроби:", drob_1, drob_2)
+print("Сумма:", drob_1 + drob_2, "\tПроизведение:", drob_1 * drob_2, "\tИнверсия первой дроби:", drob_1.inverse())
+
+#Задание 11
+vector_a = [1, 5, 9]
+vector_b = [2, 5, 8]
+result = vector(vector_a, vector_b)
+print("Задание №11\n", result)
+
+#Задание 10
+quad1 = Descr([(0, 0), (2, 0), (2, 2), (0, 2)])
+quad2 = Descr([(0, 0), (4, 0), (4, 4), (0, 4)])
+
+print("Задание 10")
+print(quad1 == quad2)
+print(quad1.is_similar(quad2))
